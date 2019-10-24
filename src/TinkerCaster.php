@@ -92,4 +92,17 @@ class TinkerCaster
 
         return $results;
     }
+
+    /**
+     * Cast a UUID to show it's string representation
+     *
+     * @param  \Ramsey\Uuid\Uuid  $uuid
+     * @return array
+     */
+    public static function castUuid($uuid)
+    {
+        return [
+            Caster::PREFIX_VIRTUAL.'uuid' => (string) $uuid,
+        ];
+    }
 }

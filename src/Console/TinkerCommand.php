@@ -112,6 +112,10 @@ class TinkerCommand extends Command
             $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
         }
 
+        if (class_exists('Ramsey\Uuid\Uuid')) {
+            $casters['Ramsey\Uuid\Uuid'] = 'Laravel\Tinker\TinkerCaster::castUuid';
+        }
+
         return $casters;
     }
 
